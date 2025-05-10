@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React from 'react'
+import { motion } from 'framer-motion';
 
 const Introduce = () => {
   const gradientTextStyle = {
@@ -10,21 +11,21 @@ const Introduce = () => {
     display: "inline-block",
     fontWeight: "bold",
     fontSize: "3rem",
+    fontWeight: "bold",
   };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
       style={{
         height: "100vh",
-        backgroundColor: "#222831",
-        color: "white",
-        padding: "20px",
-        textAlign: "center",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        gap: "15px",
+        textAlign: "center",
       }}
     >
       <h1 style={gradientTextStyle}>Ruma_</h1>
@@ -44,7 +45,7 @@ const Introduce = () => {
           Contact me
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

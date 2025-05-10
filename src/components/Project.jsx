@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import { motion } from 'framer-motion';
 
 const cardStyle = {
   backgroundColor: "#222831",
@@ -19,6 +20,10 @@ const buttonStyle = {
   color: "#ffffff",
   fontSize: "0.9rem",
   backgroundColor: "#3b82f6",
+};
+
+const hoverStyle = {
+  transform: "scale(1.05)",
 };
 
 const ProjectCard = ({ title, description, links }) => (
@@ -136,7 +141,11 @@ const projects = [
 
 const Project = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
       style={{
         minHeight: "100vh",
         backgroundColor: "#393e46",
@@ -153,7 +162,7 @@ const Project = () => {
           <ProjectCard key={i} {...p} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

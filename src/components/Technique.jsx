@@ -1,5 +1,6 @@
 import { Box, LinearProgress, Typography } from "@mui/material";
-import React from "react";
+import React from 'react'
+import { motion } from 'framer-motion';
 
 const Technique = () => {
   const cardStyle = {
@@ -35,7 +36,11 @@ const Technique = () => {
   );
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
       style={{
         height: "100vh",
         backgroundColor: "#222831",
@@ -93,7 +98,7 @@ const Technique = () => {
           {skillItem("Ollama", "초급", 20)}
         </Box>
       </Box>
-    </div>
+    </motion.div>
   );
 };
 

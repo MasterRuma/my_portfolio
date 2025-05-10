@@ -1,8 +1,13 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
       style={{
         minHeight: "100vh",
         backgroundColor: "#393e46", // 배경색
@@ -14,7 +19,14 @@ const Contact = () => {
         padding: "40px 20px",
       }}
     >
-      <h1 style={{ fontSize: "32px", marginBottom: "20px", fontWeight: "bold", textAlign: "center" }}>
+      <h1
+        style={{
+          fontSize: "32px",
+          marginBottom: "20px",
+          fontWeight: "bold",
+          textAlign: "center",
+        }}
+      >
         Contact
       </h1>
       <div
@@ -70,7 +82,7 @@ const Contact = () => {
             width: "100%",
             marginBottom: "20px",
           }}
-          onClick={() => window.open('mailto:oring2004@naver.com', '_blank')}
+          onClick={() => window.open("mailto:oring2004@naver.com", "_blank")}
         >
           <img
             src="https://img.icons8.com/ios-filled/24/ffffff/new-post.png"
@@ -95,7 +107,7 @@ const Contact = () => {
             fontSize: "16px",
             width: "100%",
           }}
-          onClick={() => window.open('https://github.com/MasterRuma', '_blank')}
+          onClick={() => window.open("https://github.com/MasterRuma", "_blank")}
         >
           <img
             src="https://img.icons8.com/ios-filled/24/ffffff/github.png"
@@ -104,7 +116,7 @@ const Contact = () => {
           MasterRuma
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

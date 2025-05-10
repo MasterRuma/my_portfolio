@@ -1,9 +1,16 @@
 import { Container, Box, Typography, Paper } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";
 
 const AboutMe = () => {
   return (
-    <Box
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+    >
+      <Box
       sx={{
         minHeight: "100vh",
         backgroundColor: "#393e46",
@@ -40,7 +47,7 @@ const AboutMe = () => {
           {/* 왼쪽 이미지 */}
           <Box
             component="img"
-            src="/vite.svg"
+            src="/ruma.png"
             alt="code"
             sx={{
               width: { xs: "100%", md: "50%" },
@@ -91,6 +98,7 @@ const AboutMe = () => {
         </Box>
       </Container>
     </Box>
+    </motion.div>
   );
 };
 

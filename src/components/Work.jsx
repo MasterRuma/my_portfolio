@@ -1,5 +1,6 @@
 import React, { useState, useRef, createRef } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { motion } from 'framer-motion';
 import "../css/Work.css"; // 아래 CSS를 포함하고 있어야 합니다
 
 const videos = [
@@ -66,7 +67,11 @@ const Work = () => {
       : videos.filter((v) => v.tags.includes(selectedTag));
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
       style={{
         height: "100vh",
         backgroundColor: "#222831",
@@ -188,7 +193,7 @@ const Work = () => {
           })}
         </TransitionGroup>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
