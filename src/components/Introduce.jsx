@@ -11,7 +11,6 @@ const Introduce = () => {
     display: "inline-block",
     fontWeight: "bold",
     fontSize: "3rem",
-    fontWeight: "bold",
   };
 
   return (
