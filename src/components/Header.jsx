@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const headerStyle = {
   display: "flex",
@@ -34,9 +34,88 @@ const logoStyle = {
 const linkStyle = {
   textDecoration: "none",
   color: "#ffffff",
+  cursor: "pointer",
+};
+
+const mobileMenuStyle = {
+  backgroundColor: "#222831",
+  width: "100%",
+  padding: "40px 20px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "20px",
+};
+
+const hamburgerStyle = {
+  fontSize: "24px",
+  color: "#ffffff",
+  cursor: "pointer",
+  display: "none",
 };
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) setMenuOpen(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleLinkClick = (e, id) => {
+    e.preventDefault();
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setMenuOpen(false);
+  };
+
+  const links = (
+    <>
+      <a
+        href="#home"
+        style={linkStyle}
+        onClick={(e) => handleLinkClick(e, "#home")}
+      >
+        Home
+      </a>
+      <a
+        href="#about"
+        style={linkStyle}
+        onClick={(e) => handleLinkClick(e, "#about")}
+      >
+        About Me
+      </a>
+      <a
+        href="#skills"
+        style={linkStyle}
+        onClick={(e) => handleLinkClick(e, "#skills")}
+      >
+        Technique
+      </a>
+      <a
+        href="#projects"
+        style={linkStyle}
+        onClick={(e) => handleLinkClick(e, "#projects")}
+      >
+        Projects
+      </a>
+      <a
+        href="#contact"
+        style={linkStyle}
+        onClick={(e) => handleLinkClick(e, "#contact")}
+      >
+        Contact
+      </a>
+    </>
+  );
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -50 }}
@@ -45,26 +124,55 @@ const Header = () => {
       style={headerStyle}
     >
       <div style={logoStyle}>Ruma_</div>
-      <nav style={navStyle}>
-        <a href="#home" style={linkStyle}>
-          Home
-        </a>
-        <a href="#about" style={linkStyle}>
-          About Me
-        </a>
-        <a href="#skills" style={linkStyle}>
-          Technique
-        </a>
-        <a href="#projects" style={linkStyle}>
-          Projects
-        </a>
-        <a href="#work" style={linkStyle}>
-          Work
-        </a>
-        <a href="#contact" style={linkStyle}>
-          Contact
-        </a>
-      </nav>
+
+      {!isMobile && <nav style={navStyle}>{links}</nav>}
+
+      {isMobile && (
+        <>
+          <div
+            style={{ ...hamburgerStyle, display: "block" }}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </div>
+
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                key="mobileMenu"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.3 }}
+                style={{
+                  ...mobileMenuStyle,
+                  position: "fixed",
+                  top: "50px",
+                  right: 0,
+                  height: "100vh",
+                  zIndex: 999,
+                }}
+              >
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    alignSelf: "flex-end",
+                    background: "none",
+                    border: "none",
+                    color: "#eeeeee",
+                    fontSize: "20px",
+                    cursor: "pointer",
+                    marginBottom: "20px",
+                  }}
+                >
+                  ✕
+                </button>
+                {links}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </>
+      )}
     </motion.header>
   );
 };

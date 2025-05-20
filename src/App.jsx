@@ -1,10 +1,8 @@
-import React from "react";
 import Header from "./components/Header";
 import Introduce from "./components/Introduce";
 import AboutMe from "./components/AboutMe";
 import Technique from "./components/Technique";
 import Project from "./components/Project";
-import Work from "./components/Work";
 import Contact from "./components/Contact";
 import "./App.css";
 
@@ -23,9 +21,6 @@ function App() {
       </section>
       <section id="projects">
         <Project />
-      </section>
-      <section id="work">
-        <Work />
       </section>
       <section id="contact">
         <Contact />

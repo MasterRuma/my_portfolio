@@ -1,0 +1,19 @@
+/* project.css */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 기본 2개 */
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        /* 모바일에서 1개 */
+    }
+}

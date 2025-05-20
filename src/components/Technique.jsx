@@ -1,6 +1,6 @@
 import { Box, LinearProgress, Typography } from "@mui/material";
-import React from 'react'
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Technique = () => {
   const cardStyle = {
@@ -42,7 +42,8 @@ const Technique = () => {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
       style={{
-        height: "100vh",
+        minHeight: "100vh", // ✅ 화면 최소 높이 확보
+        height: "auto", // ✅ 내용 길이에 따라 늘어남
         backgroundColor: "#222831",
         display: "flex",
         flexDirection: "column",
@@ -52,7 +53,11 @@ const Technique = () => {
         padding: "20px",
       }}
     >
-      <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "30px" }}>Technique</h1>
+      <h1
+        style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "30px" }}
+      >
+        Technique
+      </h1>
 
       <Box
         sx={{
@@ -67,24 +72,29 @@ const Technique = () => {
         {/* Development Card */}
         <Box sx={cardStyle}>
           <Typography variant="h6" sx={{ mb: 1 }}>
-            Development
+            FrontEnd
           </Typography>
-          {skillItem("Spring Boot", "중급", 65)}
-          {skillItem("HTML, CSS", "중급", 60)}
+          {skillItem("HTML, CSS, JS", "중급", 60)}
           {skillItem("React", "중급", 50)}
           {skillItem("Thymeleaf", "초급", 45)}
-          {skillItem("Python", "초급", 30)}
+          {skillItem("Bootstrap", "초급", 30)}
           {skillItem("Flutter", "초급", 20)}
-          {skillItem("Twine", "초급", 10)}
         </Box>
 
         {/* Modeling Card */}
         <Box sx={cardStyle}>
           <Typography variant="h6" sx={{ mb: 1 }}>
-            Video Editing
+            BackEnd
           </Typography>
-          {skillItem("Adobe Premiere Pro", "초급", 30)}
-          {skillItem("Adobe After Effect", "초급", 20)}
+          {skillItem("Spring Boot", "중급", 65)}
+          {skillItem("JPA", "중급", 50)}
+          {skillItem("MySQL", "중급", 50)}
+          {skillItem("Python", "초급", 30)}
+          {skillItem("Oracle Cloud", "초급", 30)}
+          {skillItem("Redis", "초급", 20)}
+          {skillItem("Go", "초급", 10)}
+          {skillItem("Twine", "초급", 10)}
+          {skillItem("Oracle DB", "초급", 5)}
         </Box>
 
         {/* ETC Card */}
@@ -95,6 +105,8 @@ const Technique = () => {
           {skillItem("컴퓨터 견적", "중급", 60)}
           {skillItem("Stable Diffusion Web UI", "초급", 40)}
           {skillItem("ChatGPT", "초급", 30)}
+          {skillItem("Adobe Premiere Pro", "초급", 30)}
+          {skillItem("Adobe After Effect", "초급", 20)}
           {skillItem("Ollama", "초급", 20)}
         </Box>
       </Box>

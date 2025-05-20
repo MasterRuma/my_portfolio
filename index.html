@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,5 +9,53 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <button id="scrollToTopBtn" title="맨 위로">↑</button>
+
+    <style>
+      #scrollToTopBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+        background-color: #00adb5;
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: opacity 0.3s ease, transform 0.2s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #scrollToTopBtn:hover {
+        transform: scale(1.1);
+      }
+
+      #scrollToTopBtn.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    </style>
+
+    <script>
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+      });
+
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>

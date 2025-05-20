@@ -10,7 +10,7 @@ const Contact = () => {
       viewport={{ once: true }}
       style={{
         minHeight: "100vh",
-        backgroundColor: "#393e46", // 배경색
+        backgroundColor: "#222831", // 배경색
         color: "#eeeeee",
         display: "flex",
         flexDirection: "column",
@@ -31,7 +31,7 @@ const Contact = () => {
       </h1>
       <div
         style={{
-          backgroundColor: "#222831", // 카드 배경색
+          backgroundColor: "#393e46", // 카드 배경색
           padding: "30px 40px",
           borderRadius: "12px",
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
@@ -47,7 +47,7 @@ const Contact = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: "10px",
-            backgroundColor: "#393e46",
+            backgroundColor: "#222831",
             color: "#eeeeee",
             padding: "10px 20px",
             borderRadius: "8px",
@@ -72,7 +72,7 @@ const Contact = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: "10px",
-            backgroundColor: "#393e46",
+            backgroundColor: "#222831",
             color: "#eeeeee",
             padding: "10px 20px",
             borderRadius: "8px",
@@ -98,7 +98,7 @@ const Contact = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: "10px",
-            backgroundColor: "#393e46",
+            backgroundColor: "#222831",
             color: "#eeeeee",
             padding: "10px 20px",
             borderRadius: "8px",
