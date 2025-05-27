@@ -92,7 +92,7 @@ const projects = [
     title: "MovieMall",
     description:
       "영화 티켓과 관련 굿즈를 한 번에 구매할 수 있는 올인원 영화 쇼핑 플랫폼입니다.",
-    links: [{ label: "링크 예정", url: null }],
+    links: [{ label: "사이트", url: "https://moviemall.netlify.app/" }],
   },
   {
     title: "커뮤니티 미니게임 예측 기록기",
