@@ -72,16 +72,11 @@ const ProjectCard = ({ title, description, links, index }) => (
 
 const projects = [
   {
-    title: "유튜브",
+    title: "유튜브 / 치지직",
     description:
       "풍선 타워 디펜스 6(BTD6) 관련 콘텐츠를 제작하는 한국 크리에이터입니다. 국내에서 유일하게 크리에이터 코드를 보유하고 있습니다.",
-    links: [{ label: "유튜브", url: "https://www.youtube.com/@Ruma_" }],
-  },
-  {
-    title: "치지직",
-    description:
-      "풍선 타워 디펜스 6 전용 실시간 스트리밍 방송을 진행하고 있으며, 한국 유일의 공식 크리에이터 코드 보유자입니다.",
     links: [
+      { label: "유튜브", url: "https://www.youtube.com/@Ruma_" },
       {
         label: "치지직",
         url: "https://chzzk.naver.com/79da067468e514afe638190172d5c42b",
@@ -92,7 +87,29 @@ const projects = [
     title: "MovieMall",
     description:
       "영화 티켓과 관련 굿즈를 한 번에 구매할 수 있는 올인원 영화 쇼핑 플랫폼입니다.",
-    links: [{ label: "사이트", url: "https://moviemall.netlify.app/" }],
+    links: [
+      { label: "사이트", url: "https://moviemall.netlify.app/" },
+      { label: "문서", url: "https://rebel-class-593.notion.site/Portfolio-1fa9c78b33808025874ac8b60c6abd8d" },
+    ],
+  },
+  {
+    title: "풍선타워디펜스6 영토전 관리 봇",
+    description:
+      "풍선타워디펜스6 ‘영토전’ 이벤트 중 점령 현황 수집을 돕는 디스코드 봇과 웹사이트",
+    links: [
+      { label: "사이트", url: "https://bwsd-ct-tiles-info.netlify.app/" },
+      { label: "문서", url: "https://rebel-class-593.notion.site/Portfolio-1fa9c78b33808025874ac8b60c6abd8d#2079c78b338080c29195c32a1773bfa8" },
+      {
+        label: "봇 GitHub",
+        url: "https://github.com/MasterRuma/CTTileManagerBot",
+        color: "#1e40af",
+      },
+      {
+        label: "웹 GitHub",
+        url: "https://github.com/MasterRuma/BTD6_CT_Management_System_Frontend",
+        color: "#1e40af",
+      },
+    ],
   },
   {
     title: "커뮤니티 미니게임 예측 기록기",
@@ -100,6 +117,10 @@ const projects = [
       "커뮤니티 미니게임의 최신 기록을 조회하고, 알고리즘을 통해 다음 결과를 예측할 수 있는 분석 웹사이트입니다.",
     links: [
       { label: "사이트", url: "http://arcapredict.kro.kr/" },
+      {
+        label: "문서",
+        url: "https://rebel-class-593.notion.site/Portfolio-1fa9c78b33808025874ac8b60c6abd8d#1fa9c78b3380808c8ecfc2edb7e68f7f",
+      },
       {
         label: "GitHub",
         url: "https://github.com/MasterRuma/arcaPredict",
@@ -113,6 +134,10 @@ const projects = [
       "BTD6 플레이어를 위한 맵, 영웅, 군사, 마법, 지원 등 다양한 요소를 무작위로 조합해주는 전략 보조 툴입니다.",
     links: [
       { label: "사이트", url: "https://btd6random-pick.netlify.app/" },
+      {
+        label: "문서",
+        url: "https://rebel-class-593.notion.site/Portfolio-1fa9c78b33808025874ac8b60c6abd8d#1fa9c78b338080b2b06cee25b7ce02ba",
+      },
       {
         label: "GitHub",
         url: "https://github.com/MasterRuma/random_btd6",
